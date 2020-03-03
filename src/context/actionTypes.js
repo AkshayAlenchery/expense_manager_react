@@ -1,0 +1,4 @@
+export const CREDIT_AMOUNT = 'CREDIT_AMOUNT'
+export const DEBIT_AMOUNT = 'DEBIT_AMOUNT'
+export const DELETE_CREDIT = 'DELETE_CREDIT'
+export const DELETE_DEBIT = 'DELETE_DEBIT'

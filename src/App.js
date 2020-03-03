@@ -1,17 +1,18 @@
 import React from 'react'
 import './App.css'
-import ExpenseAdd from './components/ExpenseAdd'
-import ExpenseInfo from './components/ExpenseInfo'
-import ExpenseList from './components/ExpenseList'
-import { ExpenseProvider } from './context/ExpenseContext'
+import { ExpenseProvider } from './context/expenseContext'
+import MonthInfo from './components/monthInfo'
+import ListExpenses from './components/listExpense'
+import AddExpense from './components/addExpense'
 
 function App() {
   return (
-    <div className='App'>
+    <div id='App'>
+      <h2>Expense Manager</h2>
       <ExpenseProvider>
-        <ExpenseInfo />
-        <ExpenseAdd />
-        <ExpenseList />
+        <MonthInfo />
+        <AddExpense />
+        <ListExpenses />
       </ExpenseProvider>
     </div>
   )
