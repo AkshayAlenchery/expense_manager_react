@@ -12,20 +12,8 @@ const AddExpense = () => {
     date: ''
   })
 
-  const updateAmount = event => {
-    setNewExpense(Object.assign({}, newExpense, { amount: event.target.value }))
-  }
-
-  const updateType = event => {
-    setNewExpense(Object.assign({}, newExpense, { type: event.target.value }))
-  }
-
-  const updateNote = event => {
-    setNewExpense(Object.assign({}, newExpense, { note: event.target.value }))
-  }
-
-  const updateDate = event => {
-    setNewExpense(Object.assign({}, newExpense, { date: event.target.value }))
+  const update = event => {
+    setNewExpense(Object.assign({}, newExpense, { [event.target.name]: event.target.value }))
   }
 
   return (
@@ -50,9 +38,9 @@ const AddExpense = () => {
             value={newExpense.amount}
             placeholder='Amount'
             required
-            onChange={updateAmount}
+            onChange={update}
           />
-          <select name='type' value={newExpense.type} required onChange={updateType}>
+          <select name='type' value={newExpense.type} required onChange={update}>
             <option value='' disabled selected>
               Type
             </option>
@@ -65,9 +53,9 @@ const AddExpense = () => {
           placeholder='Note'
           value={newExpense.note}
           required
-          onChange={updateNote}></textarea>
+          onChange={update}></textarea>
         <div className='flex-group'>
-          <input type='date' name='date' value={newExpense.date} required onChange={updateDate} />
+          <input type='date' name='date' value={newExpense.date} required onChange={update} />
           <input type='submit' value='Add' />
         </div>
       </form>
